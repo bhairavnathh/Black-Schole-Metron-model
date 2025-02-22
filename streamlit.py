@@ -1,9 +1,18 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from scipy.stats import norm
 import matplotlib.pyplot as plt
 import seaborn as sns
+import subprocess
+import sys
+
+# Install scipy if not found
+try:
+    import scipy
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "scipy"])
+    import scipy  # Retry the import
+from scipy.stats import norm
 
 #######################
 # Page configuration
